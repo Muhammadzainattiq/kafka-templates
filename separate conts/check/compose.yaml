@@ -1,0 +1,16 @@
+services:
+  api:
+    build:
+      context: ./fast
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./fast:/code
+    networks:
+      - my_network
+networks:
+  my_network:
+    external: true
+
+
